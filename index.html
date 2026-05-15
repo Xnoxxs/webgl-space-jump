@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deep Space Jump</title>
+  </head>
+  <body>
+    <canvas class="webgl"></canvas>
+
+    <!-- Cinematic HUD overlay -->
+    <div class="ui-overlay">
+      <div class="ui-prompt" id="prompt">
+        <span class="ui-key">SPACE</span> or <span class="ui-key">CLICK</span> &nbsp;·&nbsp; engage warp drive
+      </div>
+      <div class="ui-status" id="status"></div>
+    </div>
+
+    <!-- Subtle CRT scanlines -->
+    <div class="scanlines"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
