@@ -1,28 +1,20 @@
+
 Space Jump
-==========
+--------------------------------------------------------------------------------------
 
-A cinematic sci-fi scene built with Three.js and WebGL. You're sitting behind a spaceship in deep space, and pressing SPACE launches you into hyperspace.
+The idea was to create a stylized sci-fi experience where a spaceship does a deep dive through space using a hyper-space tunnel called the warp .The user triggers a full hyperspace jump by clicking the mouse or by holding SPACE. 
 
-No 3D models, no heavy textures — everything is built with code.
-
----
-
-Project Idea
-------------
-
-The idea was to create a stylized sci-fi experience where the user controls a warp effect. Moving the mouse slightly steers the ship, and holding SPACE (or clicking) triggers a full hyperspace jump with glowing tunnels, bloom, and screen distortion.
-
-It was mostly a project to learn shaders, post-processing, and how to structure a Three.js scene properly.
+It was mostly a project to learn shaders, post-processing, and how to structure a Three.js scene properly. No 3D models, no heavy textures — everything is built with code.
 
 ---
 
 Features
---------
+--------------------------------------------------------------------------------------
 
 - Animated spaceship — built entirely from Three.js primitives (boxes, cones, cylinders). No external model file needed.
 - Warp tunnel — a large cylinder viewed from the inside, with a custom GLSL shader drawing animated energy rings and light streaks.
 - Glowing engines — custom shader per engine that animates plasma rings and a Fresnel rim glow.
-- Mouse interaction — moving the mouse gently tilts and shifts the ship in that direction.
+- Starfield - Many stars aligned using particles and animated with shaders to create the cinematc visual of deep space travel
 - SPACE / click / tap — activates warp mode. Releasing it drops you back out.
 - Camera movement — the camera subtly follows the mouse and pushes forward during warp.
 - Post-processing — bloom, chromatic aberration, and a vignette that all intensify during warp.
@@ -32,7 +24,7 @@ Features
 ---
 
 Lighting
---------
+--------------------------------------------------------------------------------------
 
 No HDRI was used. Instead, the scene uses manual point lights and directional lights placed by hand.
 
@@ -47,7 +39,7 @@ The engine lights are actual `PointLight` objects that flicker and brighten duri
 ---
 
 Shaders
--------
+--------------------------------------------------------------------------------------
 
 Three custom GLSL shaders were written for this project:
 
@@ -62,11 +54,10 @@ Post-processing shaders handle chromatic aberration (RGB split toward edges) and
 ---
 
 Interaction
------------
+--------------------------------------------------------------------------------------
 
 | Input         | Effect                                                        |
 |---------------|---------------------------------------------------------------|
-| Mouse move    | Ship tilts and drifts toward the cursor                       |
 | Hold SPACE    | Activates warp — tunnel appears, bloom explodes, ship lurches |
 | Release SPACE | Drops out of warp smoothly                                    |
 | Click / tap   | Same as SPACE — works on mobile too                           |
@@ -76,7 +67,7 @@ Mouse coordinates are normalized to `-1 → 1` and smoothed with lerp so the mot
 ---
 
 Performance
------------
+--------------------------------------------------------------------------------------
 
 - The spaceship is made entirely from primitive geometry — no `.glb` or `.obj` file to load
 - No HDR textures — the background is just a black scene with a custom starfield
@@ -87,7 +78,7 @@ Performance
 ---
 
 What I Learned
---------------
+--------------------------------------------------------------------------------------
 
 - GLSL shaders — writing vertex and fragment shaders from scratch, using uniforms to pass data from JS to the GPU, and using `smoothstep`, `fract`, and `sin` to create animated effects
 - Animation loop — using `THREE.Timer` for frame-independent animation so things move at the same speed regardless of frame rate
@@ -99,7 +90,7 @@ What I Learned
 ---
 
 Running the Project
--------------------
+--------------------------------------------------------------------------------------
 
 ```bash
 npm install
@@ -111,7 +102,7 @@ Then open `http://localhost:5173` in your browser.
 ---
 
 Technologies Used
------------------
+--------------------------------------------------------------------------------------
 
 - [Three.js](https://threejs.org/) — 3D rendering
 - GLSL — custom shaders for engines, tunnel, burst particles, and post-processing effects
